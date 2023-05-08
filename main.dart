@@ -1,12 +1,23 @@
 void main(List<String> args) {
   Set<String> destiniesVisited = <String>{};
+  // pode aceitar Map<String,dynamic>
+  Map<String,double> registerPrices = {};
   chooseTransport(Transport.plane);
-  destiniesVisited = registerDestinies(destiniesVisited, "Rio de Janeiro");
-  destiniesVisited = registerDestinies(destiniesVisited, "Recife");
-  destiniesVisited = registerDestinies(destiniesVisited, "São Paulo");
-  destiniesVisited = registerDestinies(destiniesVisited, "Rio de Janeiro");
 
-  print(destiniesVisited);
+  // adicionado valores
+  registerPrices["São Paulo"] = 1000;
+  registerPrices["Rio de Janeiro"] = 1500;
+  // atualizando valores
+  registerPrices["São Paulo"] = 1900;
+
+  // acessando valores
+  print(registerPrices["São Paulo"]);
+  print(registerPrices["Chapecó"]);
+
+  // removendo valores
+  registerPrices.remove("São Paulo");
+
+  print(registerPrices);
 }
 
 void chooseTransport(Transport locomotion) {
