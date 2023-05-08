@@ -1,5 +1,12 @@
 void main(List<String> args) {
+  Set<String> destiniesVisited = <String>{};
   chooseTransport(Transport.plane);
+  destiniesVisited = registerDestinies(destiniesVisited, "Rio de Janeiro");
+  destiniesVisited = registerDestinies(destiniesVisited, "Recife");
+  destiniesVisited = registerDestinies(destiniesVisited, "São Paulo");
+  destiniesVisited = registerDestinies(destiniesVisited, "Rio de Janeiro");
+
+  print(destiniesVisited);
 }
 
 void chooseTransport(Transport locomotion) {
@@ -16,6 +23,11 @@ void chooseTransport(Transport locomotion) {
     default:
       print("Estou indo para a aventura, isso é o que importa");
   }
+}
+
+Set<String> registerDestinies(Set<String> set,String destiny) {
+  set.add(destiny);
+  return set;
 }
 
 enum Transport{
