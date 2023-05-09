@@ -28,6 +28,7 @@ class Travel {
 
   void visit(String destination) {
     this.visitedDestinations.add(destination);
+    _totalVisitedPlaces++;
   }
 
   void registerPrice(String destination, dynamic price) {
@@ -36,5 +37,9 @@ class Travel {
 
   int get totalVisistedPlaces {
     return _totalVisitedPlaces;
+  }
+
+  void set changeVisitedPlaces(int newTotal) {
+    _totalVisitedPlaces = newTotal;
   }
 }
