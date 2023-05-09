@@ -3,6 +3,7 @@ import 'Transport.dart';
 class Travel {
   static String workCode = "DJNADS12";
   double money = 0;
+  int _totalVisitedPlaces = 0;
   Set<String> visitedDestinations = <String>{};
   Map<String,dynamic> prices = {};
   Transport locomotion;
@@ -31,5 +32,9 @@ class Travel {
 
   void registerPrice(String destination, dynamic price) {
     prices[destination] = price;
+  }
+
+  int get totalVisistedPlaces {
+    return _totalVisitedPlaces;
   }
 }
